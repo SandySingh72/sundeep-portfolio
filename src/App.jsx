@@ -53,10 +53,10 @@ function App() {
         </p>
 
         <div className="hero-buttons">
-          {/* Update this href with your real resume link when ready */}
+          
           <a
             className="btn"
-            href="YOUR_RESUME_LINK_HERE"
+            href="/resume.pdf"
             target="_blank"
             rel="noreferrer"
           >
