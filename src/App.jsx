@@ -56,7 +56,7 @@ function App() {
           
           <a
             className="btn"
-            href="/resume.pdf"
+            href="/sundeep-portfolio/resume.pdf"
             target="_blank"
             rel="noreferrer"
           >
