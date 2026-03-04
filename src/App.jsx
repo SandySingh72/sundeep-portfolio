@@ -54,9 +54,9 @@ function App() {
 
         <div className="hero-buttons">
           
-          <a
+        <a
             className="btn"
-            href="/sundeep-portfolio/resume.pdf"
+            href="/Resume_Sundeep_B_Singh.pdf"
             target="_blank"
             rel="noreferrer"
           >
