@@ -24,7 +24,7 @@ body {
 
 /* ── Top navigation ───────────────────────────────────────────────────────── */
 .top-nav {
-  width: calc(100%-2rem);
+  width: calc(100% - 2rem);
   max-width: 1200px;
   display: flex;
   align-items: center;
@@ -45,12 +45,15 @@ body {
 }
 
 .logo {
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: #38bdf8;
+  display: flex;
+  align-items: center;
 }
+
+.logo img {
+  height: 52px;
+  width: auto;
+}
+
 
 .nav-links {
   display: flex;

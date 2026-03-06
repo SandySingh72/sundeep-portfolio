@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="hero-page">
       <nav className="top-nav">
-        <div className="logo">SBS</div>
+      <div className="logo">
+        <img src="/sbs-logo.svg" alt="SBS Logo" />
+        </div>
         <div className="nav-links">
           {['about', 'skills', 'experience', 'projects', 'contact'].map((tab) => (
             <button
@@ -150,71 +152,66 @@ function App() {
           </section>
         )}
 
-        {activeTab === 'contact' && (
-          <section id="contact" className="section">
-            <h3>Contact</h3>
-            <p>
-              Email:{' '}
-              <a href="mailto:meetsandysingh72@gmail.com">meetsandysingh72@gmail.com</a>
-            </p>
-            <p>
-              Contact:{' '}
-              {phoneSent ? (
-                <span style={{ color: '#38bdf8' }}>Request sent! Sundeep will contact you shortly.</span>
-              ) : !showPhoneForm ? (
-                <button className="reveal-btn" onClick={() => setShowPhoneForm(true)}>
-                  Request Phone Number
-                </button>
-              ) : (
-                <form
-                  className="phone-form"
-                  onSubmit={async (e) => {
-                    e.preventDefault()
-                    const data = new FormData(e.target)
-                    await fetch('https://formspree.io/f/xaqpwozg', {
-                      method: 'POST',
-                      body: data,
-                      headers: { Accept: 'application/json' },
-                    })
-                    setPhoneSent(true)
-                    setShowPhoneForm(false)
-                  }}
-                >
-                  <input className="phone-input" type="text" name="name" placeholder="Your Name" required />
-                  <input className="phone-input" type="email" name="email" placeholder="Your Email" required />
-                  <input
-                    type="hidden"
-                    name="message"
-                    value="Requesting phone number of Sundeep B Singh"
-                  />
-                  <button type="submit" className="reveal-btn">
-                    Send Request
-                  </button>
-                  <button
-                    type="button"
-                    className="reveal-btn"
-                    style={{ marginLeft: '0.5rem', opacity: 0.6 }}
-                    onClick={() => setShowPhoneForm(false)}
-                  >
-                    Cancel
-                  </button>
-                </form>
-              )}
-            </p>
-            <p>
-              LinkedIn:{' '}
-              <a href="https://www.linkedin.com/in/sundeep72singh" target="_blank" rel="noreferrer">
-                www.linkedin.com/in/sundeep72singh
-              </a>
-            </p>
-            <p>
-              GitHub:{' '}
-              <a href="https://www.github.com/SandySingh72" target="_blank" rel="noreferrer">
-                www.github.com/SandySingh72
-              </a>
-            </p>
-          </section>
-        )}
+{activeTab === 'contact' && (
+  <section id="contact" className="section">
+    <h3>Contact</h3>
+    <p>
+      Email:{' '}
+      <a href="mailto:meetsandysingh72@gmail.com">meetsandysingh72@gmail.com</a>
+    </p>
+    <p>
+      Contact:{' '}
+      {phoneSent ? (
+        <span style={{ color: '#38bdf8' }}>Request sent! Sundeep will contact you shortly.</span>
+      ) : !showPhoneForm ? (
+        <button className="reveal-btn" onClick={() => setShowPhoneForm(true)}>
+          Request Phone Number
+        </button>
+      ) : (
+        <form
+          className="phone-form"
+          onSubmit={async (e) => {
+            e.preventDefault()
+            const data = new FormData(e.target)
+            await fetch('https://formspree.io/f/xaqpwozg', {
+              method: 'POST',
+              body: data,
+              headers: { Accept: 'application/json' },
+            })
+            setPhoneSent(true)
+            setShowPhoneForm(false)
+          }}
+        >
+          <input className="phone-input" type="text" name="name" placeholder="Your Name" required />
+          <input className="phone-input" type="email" name="email" placeholder="Your Email" required />
+          <input type="hidden" name="message" value="Requesting phone number of Sundeep B Singh" />
+          <button type="submit" className="reveal-btn">Send Request</button>
+          <button
+            type="button"
+            className="reveal-btn"
+            style={{ marginLeft: '0.5rem', opacity: 0.6 }}
+            onClick={() => setShowPhoneForm(false)}
+          >
+            Cancel
+          </button>
+        </form>
+      )}
+    </p>
+    <p>
+      LinkedIn:{' '}
+      <a href="https://www.linkedin.com/in/sundeep72singh" target="_blank" rel="noreferrer">
+        linkedin.com/in/sundeep72singh
+      </a>
+    </p>
+    <p>
+      GitHub:{' '}
+      <a href="https://www.github.com/SandySingh72" target="_blank" rel="noreferrer">
+        github.com/SandySingh72
+      </a>
+    </p>
+  </section>
+)}
+
       </main>
 
       <footer className="footer">
